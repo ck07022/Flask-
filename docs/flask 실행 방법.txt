@@ -1,0 +1,4 @@
+1. 가상환경 진입 방법: 터미널에서 myproject 타이핑 + 엔터
+    1-1. 가상환경 탈출 방법: deactivate
+2. 플라스크 서버 실행 방법: flask run (myproject 안에서 실행)
+    2.1 플라스크 서버 종료 방법: ctrl + C + enter
