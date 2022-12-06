@@ -5,7 +5,7 @@ from werkzeug.utils import redirect
 
 from pybo import db
 from pybo.models import Question
-from pybo.forms import QuestionForm
+from pybo.forms import QuestionForm, AnswerForm
 
 bp = Blueprint('question', __name__, url_prefix='/question')
 
@@ -16,8 +16,9 @@ def _list():
 
 @bp.route('/detail/<int:question_id>/')
 def detail(question_id):
+    form = AnswerForm()
     question = Question.query.get_or_404(question_id)
-    return render_template('question/question_detail.html', question=question)
+    return render_template('question/question_detail.html', question=question, form=form)
 
 @bp.route('/create/', methods=('GET','POST'))
 def create():
